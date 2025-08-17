@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Box, Typography } from '@mui/material';
 import Home from './Pages/Home/Home';
+import About from './Pages/About/About';
 import Login from './Auth/Login/Login';
 import Register from './Auth/Register/Register';
 import Contact from './Pages/Contact/Contact';
@@ -46,6 +47,7 @@ function App() {
         <Box sx={{ flex: 1 }}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
             <Route
               path="/login"
               element={
