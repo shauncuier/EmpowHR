@@ -4,22 +4,9 @@ import './index.css'
 
 import App from './App.jsx'
 import { AuthProvider } from './Context/AuthContext.jsx'
+import { ThemeProvider } from './Context/ThemeContext.jsx'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Toaster } from 'react-hot-toast'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
-
-// Create a theme instance
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
-  },
-});
 
 // Create a QueryClient
 const queryClient = new QueryClient({
@@ -38,8 +25,7 @@ const queryClient = new QueryClient({
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
+      <ThemeProvider>
         <AuthProvider>
           <App />
           <Toaster position="top-right" />
