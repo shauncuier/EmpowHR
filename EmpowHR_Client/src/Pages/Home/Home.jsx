@@ -126,34 +126,87 @@ const Home = () => {
       {/* Hero Section */}
       <Box
         sx={{
-          background: 'linear-gradient(135deg, #1976d2 0%, #42a5f5 100%)',
+          background: 'linear-gradient(135deg, #00897b 0%, #4db6ac 50%, #ff7043 100%)',
           color: 'white',
-          py: 10,
+          py: 12,
           textAlign: 'center',
           position: 'relative',
-          overflow: 'hidden'
+          overflow: 'hidden',
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: 0,
+            background: 'rgba(0, 137, 123, 0.1)',
+            backdropFilter: 'blur(10px)',
+          }
         }}
       >
-        <Container maxWidth="lg">
+        <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
           <Chip 
-            label="🚀 Trusted by 500+ Companies Worldwide" 
+            label="✨ Trusted by 500+ Companies Worldwide" 
             sx={{ 
-              bgcolor: 'rgba(255,255,255,0.2)', 
+              bgcolor: 'rgba(255,255,255,0.25)', 
               color: 'white', 
-              mb: 3,
-              fontSize: '0.9rem'
+              mb: 4,
+              fontSize: '1rem',
+              fontWeight: 'bold',
+              px: 2,
+              py: 0.5,
+              borderRadius: 3,
+              backdropFilter: 'blur(10px)',
+              border: '1px solid rgba(255,255,255,0.2)'
             }} 
           />
-          <Typography variant="h2" component="h1" gutterBottom fontWeight="bold" sx={{ mb: 2 }}>
+          <Typography 
+            variant="h1" 
+            component="h1" 
+            gutterBottom 
+            fontWeight="bold" 
+            sx={{ 
+              mb: 3,
+              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem' },
+              background: 'linear-gradient(45deg, #ffffff 30%, #f1f8e9 90%)',
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              textShadow: '0 4px 8px rgba(0,0,0,0.2)'
+            }}
+          >
             Revolutionize Your Workforce with EmpowHR
           </Typography>
-          <Typography variant="h5" component="p" sx={{ mb: 3, opacity: 0.9, maxWidth: '800px', mx: 'auto' }}>
+          <Typography 
+            variant="h5" 
+            component="p" 
+            sx={{ 
+              mb: 4, 
+              opacity: 0.95, 
+              maxWidth: '800px', 
+              mx: 'auto',
+              fontSize: { xs: '1.2rem', sm: '1.4rem', md: '1.5rem' },
+              lineHeight: 1.4,
+              textShadow: '0 2px 4px rgba(0,0,0,0.1)'
+            }}
+          >
             The most comprehensive employee workload monitoring and management system designed for modern businesses
           </Typography>
-          <Typography variant="body1" sx={{ mb: 5, fontSize: '1.2rem', opacity: 0.8, maxWidth: '600px', mx: 'auto' }}>
-            Streamline operations • Boost productivity • Ensure transparency • Scale effortlessly
+          <Typography 
+            variant="body1" 
+            sx={{ 
+              mb: 6, 
+              fontSize: '1.3rem', 
+              opacity: 0.9, 
+              maxWidth: '700px', 
+              mx: 'auto',
+              fontWeight: 500,
+              letterSpacing: '0.5px'
+            }}
+          >
+            🚀 Streamline operations • 📈 Boost productivity • 🔍 Ensure transparency • ⚡ Scale effortlessly
           </Typography>
-          <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', flexWrap: 'wrap' }}>
+          <Box sx={{ display: 'flex', gap: 3, justifyContent: 'center', flexWrap: 'wrap', mb: 4 }}>
             <Button
               variant="contained"
               size="large"
@@ -161,16 +214,23 @@ const Home = () => {
               to="/register"
               sx={{
                 bgcolor: 'white',
-                color: 'primary.main',
-                '&:hover': { bgcolor: 'grey.100', transform: 'translateY(-2px)' },
-                px: 4,
-                py: 1.5,
+                color: '#00897b',
+                '&:hover': { 
+                  bgcolor: 'rgba(255,255,255,0.9)', 
+                  transform: 'translateY(-3px)',
+                  boxShadow: '0 8px 25px rgba(0,0,0,0.2)'
+                },
+                px: 5,
+                py: 2,
                 fontWeight: 'bold',
-                borderRadius: 2,
-                transition: 'all 0.3s ease'
+                borderRadius: 3,
+                transition: 'all 0.3s ease',
+                fontSize: '1.1rem',
+                textTransform: 'none',
+                boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
               }}
             >
-              Start Free Trial
+              🎯 Start Free Trial
             </Button>
             <Button
               variant="outlined"
@@ -180,21 +240,38 @@ const Home = () => {
               sx={{
                 borderColor: 'white',
                 color: 'white',
+                borderWidth: '2px',
                 '&:hover': { 
                   borderColor: 'white', 
-                  bgcolor: 'rgba(255,255,255,0.1)',
-                  transform: 'translateY(-2px)'
+                  bgcolor: 'rgba(255,255,255,0.15)',
+                  transform: 'translateY(-3px)',
+                  borderWidth: '2px',
+                  boxShadow: '0 8px 25px rgba(0,0,0,0.15)'
                 },
-                px: 4,
-                py: 1.5,
+                px: 5,
+                py: 2,
                 fontWeight: 'bold',
-                borderRadius: 2,
-                transition: 'all 0.3s ease'
+                borderRadius: 3,
+                transition: 'all 0.3s ease',
+                fontSize: '1.1rem',
+                textTransform: 'none',
+                backdropFilter: 'blur(10px)'
               }}
             >
-              Schedule Demo
+              📅 Schedule Demo
             </Button>
           </Box>
+          <Typography 
+            variant="body2" 
+            sx={{ 
+              opacity: 0.8, 
+              fontSize: '1rem',
+              fontWeight: 500,
+              letterSpacing: '0.3px'
+            }}
+          >
+            💳 No credit card required • 🎉 30-day free trial • ⚡ Setup in minutes
+          </Typography>
         </Container>
       </Box>
 
@@ -466,6 +543,162 @@ const Home = () => {
           </Grid>
         </Container>
       </Box>
+
+      {/* Recent Updates Section */}
+      <Container maxWidth="lg" sx={{ py: 8 }}>
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography variant="h3" component="h2" gutterBottom fontWeight="bold">
+            Latest Updates & Features
+          </Typography>
+          <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.2rem' }}>
+            Stay ahead with our continuous improvements and new feature releases
+          </Typography>
+        </Box>
+
+        <Grid container spacing={4}>
+          {[
+            {
+              title: 'AI-Powered Analytics',
+              description: 'New machine learning algorithms for predictive workforce insights',
+              date: 'January 2024',
+              badge: 'New'
+            },
+            {
+              title: 'Enhanced Mobile App',
+              description: 'Improved mobile experience with offline capabilities',
+              date: 'December 2023',
+              badge: 'Updated'
+            },
+            {
+              title: 'Advanced Security',
+              description: 'Zero-trust architecture and enhanced encryption protocols',
+              date: 'November 2023',
+              badge: 'Security'
+            }
+          ].map((update, index) => (
+            <Grid item xs={12} md={4} key={index}>
+              <Card sx={{ height: '100%', borderRadius: 3 }}>
+                <CardContent sx={{ p: 3 }}>
+                  <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', mb: 2 }}>
+                    <Chip 
+                      label={update.badge} 
+                      color="primary" 
+                      size="small" 
+                      sx={{ fontWeight: 'bold' }}
+                    />
+                    <Typography variant="body2" color="text.secondary">
+                      {update.date}
+                    </Typography>
+                  </Box>
+                  <Typography variant="h6" gutterBottom fontWeight="bold">
+                    {update.title}
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
+                    {update.description}
+                  </Typography>
+                  <Button variant="outlined" size="small" sx={{ borderRadius: 2 }}>
+                    See More
+                  </Button>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+
+      {/* FAQ Section */}
+      <Box sx={{ bgcolor: 'grey.50', py: 8 }}>
+        <Container maxWidth="lg">
+          <Box sx={{ textAlign: 'center', mb: 6 }}>
+            <Typography variant="h3" component="h2" gutterBottom fontWeight="bold">
+              Frequently Asked Questions
+            </Typography>
+            <Typography variant="body1" color="text.secondary" sx={{ fontSize: '1.2rem' }}>
+              Get answers to the most common questions about EmpowHR
+            </Typography>
+          </Box>
+
+          <Grid container spacing={4}>
+            {[
+              {
+                question: 'How quickly can we get started?',
+                answer: 'Most organizations are up and running within 24 hours. Our setup wizard guides you through the entire process.'
+              },
+              {
+                question: 'Is my data secure?',
+                answer: 'Yes, we use bank-level encryption and follow SOC 2 compliance standards to protect your sensitive information.'
+              },
+              {
+                question: 'Can I integrate with existing systems?',
+                answer: 'EmpowHR offers seamless integration with 100+ popular business tools including Slack, Microsoft 365, and more.'
+              },
+              {
+                question: 'What support do you provide?',
+                answer: '24/7 expert support, comprehensive documentation, video tutorials, and dedicated success managers for enterprise clients.'
+              }
+            ].map((faq, index) => (
+              <Grid item xs={12} md={6} key={index}>
+                <Paper sx={{ p: 4, height: '100%', borderRadius: 3 }}>
+                  <Typography variant="h6" gutterBottom fontWeight="bold" color="primary.main">
+                    {faq.question}
+                  </Typography>
+                  <Typography variant="body1" color="text.secondary">
+                    {faq.answer}
+                  </Typography>
+                </Paper>
+              </Grid>
+            ))}
+          </Grid>
+
+          <Box sx={{ textAlign: 'center', mt: 6 }}>
+            <Button
+              variant="outlined"
+              size="large"
+              component={Link}
+              to="/contact"
+              sx={{
+                px: 4,
+                py: 1.5,
+                borderRadius: 2,
+                fontWeight: 'bold'
+              }}
+            >
+              View All FAQs
+            </Button>
+          </Box>
+        </Container>
+      </Box>
+
+      {/* Newsletter Section */}
+      <Container maxWidth="md" sx={{ py: 8 }}>
+        <Paper sx={{ p: 6, textAlign: 'center', borderRadius: 3, bgcolor: 'primary.main', color: 'white' }}>
+          <Typography variant="h4" component="h2" gutterBottom fontWeight="bold">
+            Stay Updated with EmpowHR
+          </Typography>
+          <Typography variant="body1" sx={{ mb: 4, fontSize: '1.1rem', opacity: 0.9 }}>
+            Get the latest HR insights, product updates, and best practices delivered to your inbox
+          </Typography>
+          <Box sx={{ display: 'flex', gap: 2, justifyContent: 'center', maxWidth: 400, mx: 'auto' }}>
+            <Button
+              variant="contained"
+              sx={{
+                bgcolor: 'white',
+                color: 'primary.main',
+                '&:hover': { bgcolor: 'grey.100' },
+                px: 4,
+                py: 1.5,
+                borderRadius: 2,
+                fontWeight: 'bold'
+              }}
+            >
+              Subscribe Now
+            </Button>
+          </Box>
+          <Typography variant="body2" sx={{ mt: 2, opacity: 0.8 }}>
+            Join 10,000+ HR professionals • Unsubscribe anytime
+          </Typography>
+        </Paper>
+      </Container>
 
       {/* CTA Section */}
       <Container maxWidth="md" sx={{ py: 8, textAlign: 'center' }}>
