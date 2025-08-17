@@ -9,18 +9,24 @@ import {
     Menu,
     MenuItem,
     IconButton,
-    useTheme,
-    useMediaQuery
+    useMediaQuery,
+    Tooltip
 } from '@mui/material';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../Context/AuthContext';
 import toast from 'react-hot-toast';
-import { Menu as MenuIcon, Dashboard, ContactMail, Person } from '@mui/icons-material';
+import { 
+    Menu as MenuIcon, 
+    Dashboard, 
+    ContactMail, 
+    Person
+} from '@mui/icons-material';
+import { useTheme as useMuiTheme } from '@mui/material/styles';
 
 const Navbar = () => {
     const { user, userDetails, logoutUser } = useAuth();
     const navigate = useNavigate();
-    const theme = useTheme();
+    const theme = useMuiTheme();
     const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
     const [anchorEl, setAnchorEl] = useState(null);
@@ -47,12 +53,13 @@ const Navbar = () => {
 
     const menuItems = [
         { label: 'Home', path: '/' },
+        { label: 'About', path: '/about' },
         { label: 'Contact Us', path: '/contact' },
         ...(user ? [{ label: 'Dashboard', path: '/dashboard', icon: <Dashboard /> }] : [])
     ];
 
     return (
-        <AppBar position="sticky" sx={{ backgroundColor: '#1976d2' }}>
+        <AppBar position="sticky">
             <Toolbar>
                 {/* Logo */}
                 <Typography
@@ -96,6 +103,7 @@ const Navbar = () => {
                         <MenuIcon />
                     </IconButton>
                 )}
+
 
                 {/* Auth Buttons / User Profile */}
                 <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
