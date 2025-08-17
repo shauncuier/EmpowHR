@@ -1,0 +1,24 @@
+{
+  "name": "empowhr-server",
+  "version": "1.0.0",
+  "description": "EmpowHR Backend Server",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed": "node seed-database.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "mongodb": "^6.3.0",
+    "dotenv": "^16.3.1",
+    "stripe": "^14.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": ["hr", "payroll", "employee", "management"],
+  "author": "EmpowHR Team",
+  "license": "MIT"
+}
